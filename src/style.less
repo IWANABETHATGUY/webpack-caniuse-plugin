@@ -1,0 +1,110 @@
+.main {
+  @cell-width: 96rpx;
+  @cell-height: 98rpx;
+  @indicator-height: 68rpx;
+  @primary: #5989c7;
+  .jc-indicator {
+    position: absolute;
+    left: 0;
+    z-index: 110;
+    display: flex;
+    padding-top: @indicator-height;
+    flex-direction: column;
+    background: #fefefe;
+    text {
+      display: block;
+      box-sizing: border-box;
+      height: 2 * @cell-height;
+      width: 78rpx;
+      font-size: 24rpx;
+      text-align: center;
+      color: #4a4a4a;
+      &:last-child {
+        height: 3 * @cell-height;
+      }
+    }
+  }
+  .days-wrapper {
+    .days-container {
+      width: 7 * @cell-width;
+      // height: 11 * @cell-height;
+      margin-left: 78rpx;
+      &::before {
+        content: attr(data-month);
+        position: absolute;
+        z-index: 112;
+        left: 0;
+        top: 60rpx;
+        display: block;
+        height: @indicator-height;
+        width: 78rpx;
+        background: @primary;
+        text-align: center;
+        font-size: 20rpx;
+        color: #fff;
+        line-height: @indicator-height * 1.4;
+      }
+      .weekday-indicator {
+        position: relative;
+        align-items: center;
+        z-index: 115;
+        display: flex;
+        flex-wrap: wrap;
+        // 加2是因为在某些手机上右边会有2px左右的白边
+        width: 7 * @cell-width + 2;
+        height: @indicator-height;
+        background: @primary;
+        .weekday-indicator-container {
+          width: @cell-width;
+          height: @indicator-height;
+          &:last-child {
+            
+          }
+          & text {
+            width: 63rpx;
+            height: 27rpx;
+            margin: auto;
+          }
+          & text:first-child {
+            margin-top: 8rpx;
+          }
+          & text:last-child {
+            line-height: 24rpx;
+          }
+          &.today text{
+            background: #fff;
+            color: @primary;
+          }
+          &.today text:first-child {
+            border-top-left-radius: 12rpx;
+            border-top-right-radius: 12rpx;
+          }
+          &.today text:last-child {
+            border-bottom-left-radius: 12rpx;
+            border-bottom-right-radius: 12rpx;
+          }
+        }
+
+        text {
+          display: block;
+          font-size: 20rpx;
+          color: white;
+          text-align: center;
+        }
+        text.date {
+          font-size: 24rpx;
+          letter-spacing: 8rpx;
+        }
+        &.fixed {
+          position: fixed;
+          top: 0;
+          transition: all 0.25s;
+        }
+      }
+      .day {
+        float: left;
+        /* width: @day-width;*/
+      }
+    }
+  }
+}
