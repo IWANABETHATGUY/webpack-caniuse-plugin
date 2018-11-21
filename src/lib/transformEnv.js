@@ -1,16 +1,4 @@
-const featureFnMap = require('./featureType');
-
-
-function getFeatureFromProp(prop) {
-  for (let fnKey in featureFnMap) {
-    if (featureFnMap[fnKey](prop)) {
-      return fnKey;
-    }
-  }
-  return prop;
-}
-
-function transformEnv(env) {
+const transformEnv = (env) => {
   let res = {};
   let versionReg = /(>=)?\s*(ie|firefox|chrome|safari|opera|ios_saf|op_mini)\s*(\d+)/i;
   let latestReg = /latest\s+(\d+)\s+versions?/i;
@@ -29,7 +17,5 @@ function transformEnv(env) {
     return res;
   }
 }
-module.exports = {
-  getFeatureFromProp,
-  transformEnv
-};
+
+module.exports = transformEnv;

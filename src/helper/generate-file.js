@@ -2,7 +2,7 @@ const fs = require('fs');
 const commonProperty = require('./common-property');
 
 let resData = commonProperty.reduce((acc, cur) => {
-  let regexp = /([\w-]+)(\s\(([\s\S]+)\))?/
+  let regexp = /([\w-]+)(\s\(([\s\S]+)\))?/;
   let matches = cur.match(regexp);
   let prop = matches[1];
   let values = [];
@@ -11,11 +11,11 @@ let resData = commonProperty.reduce((acc, cur) => {
   }
   acc[prop] = {
     prop,
-    values
-  }
+    values,
+  };
   return acc;
-}, {})
+}, {});
 
-fs.writeFile('./full-support-table.js', JSON.stringify(resData), (err) => {
+fs.writeFile('./full-support-table.js', JSON.stringify(resData), err => {
   if (err) return;
-})
+});
