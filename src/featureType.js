@@ -53,4 +53,3 @@ const featureFnMap = Object.keys(featureMap).reduce((acc, cur) => {
 
 module.exports = featureFnMap;
 
-('[Object object]');

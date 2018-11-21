@@ -6,6 +6,8 @@ function pretrementPropList (filename, nodeList) {
   switch(extension) {
     case 'less':
       return LessFilter(nodeList);
+    default:
+    return nodeList;
   }
 }
 

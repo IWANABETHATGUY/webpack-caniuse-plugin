@@ -1,6 +1,26 @@
 {
+  "name": "webpack-caniuse-plugin",
+  "version": "1.0.0",
+  "description": "this plugin is used to ensure your style code only use the limit css property",
+  "main": "index.js",
   "dependencies": {
     "chalk": "^2.4.1",
     "postcss": "^7.0.6"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node --inspect --inspect-brk ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IWANABETHATGUY/webpack-caniuse-plugin.git"
+  },
+  "keywords": [],
+  "author": "hxj <974153916@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IWANABETHATGUY/webpack-caniuse-plugin/issues"
+  },
+  "homepage": "https://github.com/IWANABETHATGUY/webpack-caniuse-plugin#readme"
 }
